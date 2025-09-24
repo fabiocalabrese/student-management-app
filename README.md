@@ -44,7 +44,8 @@ Make sure the database contains at least the following tables:
 
 #### Enrollments Management
 - View a table with enrollment details: `ID | Student ID | Course ID | Registration Date | Mark | Status | Actions`  
-- Actions: **Edit** or **Delete** enrollment  
+- Actions: **Edit** or **Delete** enrollment
+- Add bew enrollments via a dedicated form
 - **Search bar** to filter enrollments  
 
 #### Statistics
@@ -112,17 +113,17 @@ student_project/
 └─ venv/                  # Virtual environment
 ```
 Note: The modules/ folder centralizes all SQL query functions. Templates are divided by function: add, edit, or dashboard.
+## Setup Instructions
 
-Setup Instructions
-Clone the repository:
+1. **Clone the repository:**
 
-```python
+```bash
 git clone https://github.com/<USERNAME>/<REPO>.git
 cd student_project
 ```
 Create and activate a virtual environment:
 
-```python
+```bash
 python -m venv venv
 # Windows
 venv\Scripts\activate
@@ -131,17 +132,32 @@ source venv/bin/activate
 ```
 Install dependencies:
 
-```python
+```bash
 pip install -r requirements.txt
 ```
-Create a .env file in the root with your database credentials:
-```python
+Create a .env file in the root with your database credentials (password is not stored, it will be entered at login):
+```bash
 DB_HOST=localhost
-DB_USER=root
-```
 DB_NAME=student_db
+```
+Generate self-signed SSL certificates (required for HTTPS):
+
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
+Update the paths in app.py to match the location of your generated certificates:
+```bash
+if __name__ == "__main__":
+    # Make sure to generate self-signed certificates first
+    # openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+    app.run(ssl_context=(
+        r"YOUR_LOCAL_PATH_TO\cert.pem",
+        r"YOUR_LOCAL_PATH_TO\key.pem"
+    ), debug=True)
+Replace YOUR_LOCAL_PATH_TO with the actual path where your cert.pem and key.pem files are located.
+```
 Run the application:
-
-
+```bash
 python app.py
-Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS not configured
+```
+Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS is not configured)

@@ -64,7 +64,7 @@ SQL Injection Protection
 All database queries use parameterized statements
 
 File Structure
-
+```python
 student_project/
 │
 ├─ app.py                 # Main Flask app, routes, and session/security configuration
@@ -94,32 +94,36 @@ student_project/
 │   ├─ dashboard_*.html
 │
 └─ venv/                  # Virtual environment
-
+```
 Note: The modules/ folder centralizes all SQL query functions. Templates are divided by function: add, edit, or dashboard.
 
 Setup Instructions
 Clone the repository:
 
-
+```python
 git clone https://github.com/<USERNAME>/<REPO>.git
 cd student_project
+```
 Create and activate a virtual environment:
 
-
+```python
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
+```
 Install dependencies:
 
-
+```python
 pip install -r requirements.txt
+```
 Create a .env file in the root with your database credentials:
-
+```python
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
+```
 DB_NAME=student_db
 Run the application:
 

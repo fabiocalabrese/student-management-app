@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica Iscrizione</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <h2>Edit enrollment</h2>
+
+    <form method="post">
+        <table class="table_edit">
+            <tr>
+                <td>Student ID: "{{ enrolled.student_id }}"</td>
+                <td><input type="text" name="student_id"></td>
+            </tr>
+            <tr>
+                <td>Course ID: "{{ enrolled.course_id }}"</td>
+                <td><input type="text" name="course_id"></td>
+            </tr>
+            <tr>
+                <td>Registration Date: "{{ enrolled.registrazion_date }}"</td>
+                <td><input type="date" name="registration_date"></td>
+            </tr>
+            <tr>
+                <td>Mark: "{{ enrolled.mark }}"</td>
+                <td><input type="text" name="mark"></td>
+            </tr>
+            <tr>
+                <td>Status: "{{enrolled.status }}"</td>
+                <td><input type="text" name="status"></td>
+            </tr>
+
+
+        </table>
+
+        <br>
+        <button type="submit">Save</button>
+        <button type="button" onclick="location.href='/enrollment'">Cancel</button>
+    </form>
+</body>
+</html>

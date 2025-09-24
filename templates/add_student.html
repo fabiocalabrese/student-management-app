@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Aggiungi Studente</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="POST">
+        <label>First Name:</label><br>
+        <input type="text" name="name" required><br>
+
+        <label>Last Name:</label><br>
+        <input type="text" name="surname" required><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br>
+
+        <label>DOB:</label><br>
+        <input type="date" name="born_date" required><br>
+
+        <label>Student ID:</label><br>
+        <input type="text" name="student_id" required><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <br>
+    <button onclick="location.href='/students'">Cancel</button>
+</body>
+</html>

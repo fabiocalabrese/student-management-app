@@ -1,0 +1,185 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #fff);
+    padding: 40px;
+    color: #333;
+}
+
+
+
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #2c3e50;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+     display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+table.table_edit {
+  width: 60%;               /* Puoi anche usare 40% o 500px per tabelle piccole */
+  border-collapse: collapse;
+  font-size: 14px;          /* Testo piccolo ma leggibile */
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #1abc9c;
+     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn-edit {
+    background-color: #6c5ce7;
+}
+.btn-edit:hover {
+    background-color: #a29bfe;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+.btn-delete:hover {
+    background-color: #ff7675;
+}
+
+
+.navbar {
+    background-color: #34495e;
+    padding: 10px 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  float: left;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover,
+.navbar a.right:hover {
+  color: #1abc9c;
+}
+
+
+
+ul.flash {
+    list-style: none;
+    padding: 10px;
+    background-color: #e0ffe0;
+    border: 1px solid #00a000;
+    color: #004400;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px;
+}
+
+.login-page{
+    background-color: #f2f2f2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+/* Barra di ricerca nella navbar */
+.search-form {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-form input[type="search"] {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-form button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}

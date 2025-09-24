@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica Studente</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <h2>Edit student</h2>
+
+    <form method="post">
+        <table class="table_edit">
+            <tr>
+                <td>First Name: "{{ student.name }}"</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Last Name: "{{ student.surname }}"</td>
+                <td><input type="text" name="surname"></td>
+            </tr>
+            <tr>
+                <td>Email: "{{ student.email }}"</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>DOB: "{{ student.born_date }}"</td>
+                <td><input type="date" name="born_date"></td>
+            </tr>
+            <tr>
+                <td>Student ID: "{{ student.student_id }}"</td>
+                <td><input type="text" name="student_id"></td>
+            </tr>
+
+
+        </table>
+         <!-- Campo nascosto con la vecchia matricola -->
+    <input type="hidden" name="old_student_id" value="{{ student.student_id }}">
+
+        <br>
+        <button type="submit">Save</button>
+        <button type="button" onclick="location.href='/students'">Cancel</button>
+    </form>
+</body>
+</html>

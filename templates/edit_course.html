@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica Iscrizione</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <h2>Edit course</h2>
+
+    <form method="post">
+        <table class="table_edit">
+            <tr>
+                <td>Course Name: "{{ course.name }}"</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Code ID: "{{ course.code }}"</td>
+                <td><input type="text" name="course_id"></td>
+            </tr>
+            <tr>
+                <td>Teacher: "{{ course.teacher }}"</td>
+                <td><input type="text" name="teacher"></td>
+            </tr>
+            <tr>
+                <td>Credits: "{{ course.credits }}"</td>
+                <td><input type="text" name="credits"></td>
+            </tr>
+        </table>
+
+         <input type="hidden" name="old_course_id" value="{{ course.code }}">
+        <br>
+
+        <button type="submit">Save</button>
+        <button type="button" onclick="location.href='/courses'">Cancel</button>
+
+    </form>
+</body>
+</html>

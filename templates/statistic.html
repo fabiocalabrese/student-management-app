@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiche Iscrizioni</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Enrolled Students by Course</h1>
+        <nav class="navbar">
+         <a href="{{ url_for('dashboard_students') }}">Students</a>
+        <a href="{{ url_for('dashboard_courses') }}">Courses</a>
+        <a href="{{ url_for('dashboard_enroll') }}">Enrollments</a>
+        <a href="{{ url_for('dashboard_statistics') }}">Statistics</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+       <form class="search-form" method="GET" style="float:right;">
+        <input type="search" name="q" value="{{ request.args.get('q', '') }}" placeholder="🔍 Search...">
+       </form>
+    </nav>
+    <div style="width: 400px; height: 300px;">
+        <canvas id="studentChart"></canvas>
+
+    </div>
+
+
+    <script>
+        // Dati passati da Flask a JavaScript (convertiti con tojson)
+        const labels = {{ course_names | tojson }};
+        const not_passed = {{ not_passed_counts | tojson }};
+        const passed = {{ passed_counts | tojson }};
+
+        const ctx = document.getElementById('studentChart').getContext('2d');
+        const studentChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                label: 'Number of Enrolled Students',
+                data: not_passed,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Number of Passes',
+                data: passed,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }],
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true   // Barre impilate sull'asse X
+                         },
+                    y: {
+                        stacked: true,  // Barre impilate sull'asse Y
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

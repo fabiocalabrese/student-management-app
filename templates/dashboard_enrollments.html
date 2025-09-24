@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestione Studenti</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+<body>
+    <h1>Enrollments Management Dashboard</h1>
+
+    <nav class="navbar">
+        <a href="{{ url_for('dashboard_students') }}">Students</a>
+        <a href="{{ url_for('dashboard_courses') }}">Courses</a>
+        <a href="{{ url_for('dashboard_enroll') }}">Enrollments</a>
+        <a href="{{ url_for('dashboard_statistics') }}">Statistics</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <form class="search-form" method="GET" style="float:right;">
+        <input type="search" name="q" value="{{ request.args.get('q', '') }}" placeholder="🔍 Search...">
+    </form>
+
+    </nav>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flash">
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <section>
+        <h2>Enrollment</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Student_id</th>
+                <th>course_id</th>
+                <th>Registration date</th>
+                <th>Mark</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for enrolled in enrollments %}
+            <tr>
+                <td>{{ enrolled.id }}</td>
+                <td>{{ enrolled.student_id }}</td>
+                <td>{{ enrolled.course_id }}</td>
+                <td>{{ enrolled.registrazion_date }}</td>
+                <td>{{ enrolled.mark }}</td>
+                <td>{{ enrolled.status }}</td>
+                <td>
+                    <button onclick="location.href='/edit/enroll/{{ enrolled.id }}'" class="btn-edit"><i class="fas fa-pen"></i> Edit</button>
+                    <button onclick="location.href='/delete/enroll/{{ enrolled.student_id }}'" class="btn-delete"><i class="fas fa-trash-alt"></i> Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button onclick="location.href='/add/enroll'">Add enrollment</button>
+
+    </section>
+</body>
+
+</html>

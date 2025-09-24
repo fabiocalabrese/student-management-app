@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestione Studenti</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+</head>
+
+<body>
+    <h1>Courses Management Dashboard</h1>
+
+    <nav class="navbar">
+        <a href="{{ url_for('dashboard_students') }}">Students</a>
+        <a href="{{ url_for('dashboard_courses') }}">Courses</a>
+        <a href="{{ url_for('dashboard_enroll') }}">Enrollments</a>
+        <a href="{{ url_for('dashboard_statistics') }}">Statistics</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <form class="search-form" method="GET" style="float:right;">
+        <input type="search" name="q" value="{{ request.args.get('q', '') }}" placeholder="🔍 Search...">
+    </form>
+    </nav>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flash">
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+
+    <section>
+        <h2>Courses</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Teacher</th>
+                <th>Credits</th>
+                <th>Action</th>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.code }}</td>
+                <td>{{ course.teacher }}</td>
+                <td>{{ course.credits }}</td>
+                <td>
+                    <button onclick="location.href='/edit/course/{{course.id}}'" class="btn-edit"><i class="fas fa-pen"></i>Edit</button>
+                    <button onclick="location.href='/delete/course/{{ course.id }}/{{course.code}}'" class="btn-delete"><i class="fas fa-trash-alt"></i>Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button onclick="location.href='/add/course'">Add course</button>
+    </section>
+
+
+</body>
+
+</html>

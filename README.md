@@ -97,11 +97,6 @@ student_project/
 │   ├─ enrollment_model.py
 │   └─ student_model.py
 │
-├─ modules/               # Functions to handle SQL queries
-│   ├─ student_queries.py
-│   ├─ course_queries.py
-│   └─ enrollment_queries.py
-│
 ├─ static/                # Static assets
 │   └─ style.css
 │
@@ -110,6 +105,20 @@ student_project/
 │   ├─ edit_*.html
 │   ├─ dashboard_*.html
 │
+├─ screenshots/
+│   ├─ add_course.jpg
+│   ├─ add_enrollment.jpg
+│   ├─ add_student.jpg
+│   ├─ courses_dashboard.jpg
+│   ├─ edit_course.jpg
+│   ├─ edit_enrollment.jpg
+│   ├─ edit_student.jpg
+│   ├─ enrollments_dashboard.jpg
+│   ├─ log_out.jpg
+│   ├─ login_dashboard.jpg
+│   ├─ search_function.jpg
+│   ├─ statistics.jpg
+│   └─ student_dashboard.jpg
 └─ venv/                  # Virtual environment
 ```
 Note: The modules/ folder centralizes all SQL query functions. Templates are divided by function: add, edit, or dashboard.
@@ -161,3 +170,34 @@ Run the application:
 python app.py
 ```
 Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS is not configured)
+
+
+
+
+## Screenshots
+
+### Login
+![Login Dashboard](screenshots/login_dashboard.jpg)
+
+### Student Dashboard
+![Student Dashboard](screenshots/student_dashboard.jpg)
+
+### Courses Dashboard
+![Courses Dashboard](screenshots/courses_dashboard.jpg)
+
+### Enrollments Dashboard
+![Enrollments Dashboard](screenshots/enrollments_dashboard.jpg)
+
+### Add / Edit Forms
+![Add Student](screenshots/add_student.jpg)
+![Add Course](screenshots/add_course.jpg)
+![Add Enrollment](screenshots/add_enrollment.jpg)
+![Edit Student](screenshots/edit_student.jpg)
+![Edit Course](screenshots/edit_course.jpg)
+![Edit Enrollment](screenshots/edit_enrollment.jpg)
+
+### Features
+![Search Function](screenshots/search_function.jpg)
+![Statistics](screenshots/statistics.jpg)
+![Log Out](screenshots/log_out.jpg)
+

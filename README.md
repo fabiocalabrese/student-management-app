@@ -49,6 +49,7 @@ A personal project built using **Python, Flask, HTML, CSS, and MySQL** to manage
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_SAMESITE = 'Lax'
+```
 Technical Details
 Backend: Python + Flask
 
@@ -63,8 +64,7 @@ SQL Injection Protection
 All database queries use parameterized statements
 
 File Structure
-bash
-Copia codice
+
 student_project/
 │
 ├─ app.py                 # Main Flask app, routes, and session/security configuration
@@ -99,14 +99,12 @@ Note: The modules/ folder centralizes all SQL query functions. Templates are div
 Setup Instructions
 Clone the repository:
 
-bash
-Copia codice
+
 git clone https://github.com/<USERNAME>/<REPO>.git
 cd student_project
 Create and activate a virtual environment:
 
-bash
-Copia codice
+
 python -m venv venv
 # Windows
 venv\Scripts\activate
@@ -114,20 +112,16 @@ venv\Scripts\activate
 source venv/bin/activate
 Install dependencies:
 
-bash
-Copia codice
+
 pip install -r requirements.txt
 Create a .env file in the root with your database credentials:
 
-ini
-Copia codice
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=student_db
 Run the application:
 
-bash
-Copia codice
+
 python app.py
 Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS not configured

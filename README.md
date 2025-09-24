@@ -94,6 +94,7 @@ student_project/
 │   ├─ dashboard_*.html
 │
 └─ venv/                  # Virtual environment
+
 Note: The modules/ folder centralizes all SQL query functions. Templates are divided by function: add, edit, or dashboard.
 
 Setup Instructions

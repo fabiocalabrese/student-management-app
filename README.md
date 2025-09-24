@@ -4,6 +4,22 @@ A personal project built using **Python, Flask, HTML, CSS, and MySQL** to manage
 
 ---
 
+## NOTE
+
+This application requires a MySQL database with **pre-created tables** according to the structure of the web app.  
+Make sure the database contains at least the following tables:
+
+- **students**  
+  Main columns: `id`, `first_name`, `last_name`, `email`, `dob`, `student_id`
+
+- **courses**  
+  Main columns: `id`, `name`, `code`, `teacher`, `credits`
+
+- **enrollments**  
+  Main columns: `id`, `student_id`, `course_id`, `registration_date`, `mark`, `status`
+
+> Note: The database **password is not stored in the `.env` file**. It is provided by the user at login, following the secure authentication method implemented in the app. Make sure to create the database and tables before running the application.
+
 ## Features
 
 ### Authentication
@@ -53,7 +69,7 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 Technical Details
 Backend: Python + Flask
 
-Frontend: HTML, CSS, JavaScript
+Frontend: HTML, CSS
 
 Database: MySQL
 
@@ -122,7 +138,6 @@ Create a .env file in the root with your database credentials:
 ```python
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=your_password
 ```
 DB_NAME=student_db
 Run the application:

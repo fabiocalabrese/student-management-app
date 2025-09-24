@@ -177,27 +177,27 @@ Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS i
 ## Screenshots
 
 ### Login
-![Login Dashboard](screenshots/login_dashboard.jpg)
+![Login Dashboard](Screenshots/login_dashboard.jpg)
 
 ### Student Dashboard
-![Student Dashboard](screenshots/student_dashboard.jpg)
+![Student Dashboard](Screenshots/student_dashboard.jpg)
 
 ### Courses Dashboard
-![Courses Dashboard](screenshots/courses_dashboard.jpg)
+![Courses Dashboard](Screenshots/courses_dashboard.jpg)
 
 ### Enrollments Dashboard
-![Enrollments Dashboard](screenshots/enrollments_dashboard.jpg)
+![Enrollments Dashboard](Screenshots/enrollments_dashboard.jpg)
 
 ### Add / Edit Forms
-![Add Student](screenshots/add_student.jpg)
-![Add Course](screenshots/add_course.jpg)
-![Add Enrollment](screenshots/add_enrollment.jpg)
-![Edit Student](screenshots/edit_student.jpg)
-![Edit Course](screenshots/edit_course.jpg)
-![Edit Enrollment](screenshots/edit_enrollment.jpg)
+![Add Student](Screenshots/add_student.jpg)
+![Add Course](Screenshots/add_course.jpg)
+![Add Enrollment](Screenshots/add_enrollment.jpg)
+![Edit Student](Screenshots/edit_student.jpg)
+![Edit Course](Screenshots/edit_course.jpg)
+![Edit Enrollment](Screenshots/edit_enrollment.jpg)
 
 ### Features
-![Search Function](screenshots/search_function.jpg)
-![Statistics](screenshots/statistics.jpg)
-![Log Out](screenshots/log_out.jpg)
+![Search Function](Screenshots/search_function.jpg)
+![Statistics](Screenshots/statistics.jpg)
+![Log Out](Screenshots/log_out.jpg)
 

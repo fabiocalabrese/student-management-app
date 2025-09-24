@@ -191,6 +191,7 @@ Open your browser at https://localhost:5000 (or http://localhost:5000 if HTTPS i
 ### Add / Edit Forms
 ![Add Student](Screenshots/add_student.jpg)
 ![Add Course](Screenshots/add_course.jpg)
+![Add Enrollment](Screenshots/add_enrollment.jpg)
 ![Edit Student](Screenshots/edit_student.jpg)
 ![Edit Course](Screenshots/edit_course.jpg)
 ![Edit Enrollment](Screenshots/edit_enrollment.jpg)

@@ -139,11 +139,7 @@ venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
 ```
-Install dependencies:
 
-```bash
-pip install -r requirements.txt
-```
 Create a .env file in the root with your database credentials (password is not stored, it will be entered at login):
 ```bash
 DB_HOST=localhost
